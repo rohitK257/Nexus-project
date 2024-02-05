@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <title>Nexus Project</title>
+    <style>
+        *{
+            text-align:center;
+        }
+        body{
+        background-color:yellow;
+        background-image:url("background image.jpeg");
+        }
+        p{
+            font-size:14px;
+        }
+    </style>
+</head>
+<body> 
+<h1>Registration Form</h1>
+<br>
+<br>
+<br>
+<form action="login.html" method="get" id="form1">
+<label for="euser">Enter Username</label>
+<br>
+<br>
+<input type="text" id="euser" name="euser" placeholder="Enter name" required>
+<br>
+<br>
+<br>
+<label for="eemail">Enter Email ID</label>
+<br>
+<br>
+<input type="email" id="eemail" name="eemail" placeholder="Enter Email ID" required>
+<br>
+<br>
+<br>
+<label for="password">Enter password</label>
+<br>
+<br>
+<input type="password" id="password" type="password" placeholder="Enter password" onkeyup="check()" required>
+<br>
+<br>
+<br>
+<label for="confirmpassword">Confirm Password</label>
+<br>
+<br>
+<input type="password" id="confirmpassword" type="password" placeholder="Confirm password" onkeyup="check()"  required>
+<span id='message'></span>
+<br>
+<br>
+<br>
+<button type="submit" form="form1" value="Submit">Register</button>
+<p>Already registered?</p>
+<a href="login.html">Login</a>   
+<script>
+    function verifyPassword(){
+        var txt;
+        var pw=prompt("Enter your password");
+        if(pw==" "){
+        window.alert("Enter correct length");
+    }
+    if(pw.length<8){
+        document.getElementById("message").innerHTML="Password length must be atleast 8 characters";
+        window.alert("Enter correct length");
+    }
+    if(pw.length>15)
+    {
+        document.getElementById("message").innerHTML="Password length must not exceed 15 characters";
+        alert("Enter correct length");  
+    }
+    else{
+        alert("Password is correct");
+    }
+}
+    function check(){
+    if(document.getElementById('password').value==(document.getElementById('confirmpassword').value){
+            document.getElementById('message').stylecolor='green';
+            document.getElementById('message').innerHTML='matching';
+        }
+        else{
+            document.getElementById('message').style.color='red';
+            document.getElementById('message').innerHTML='not matching';
+        }
+        }
+        function validate_form(thisform)
+        {
+            with(thisform)
+            {
+                if(validate_required((password.value!=confirmpassword.value) {
+                    alert("Your password and confirm password do not match");
+                    confirmpassword.focus();
+                    return false;
+                }
+            }
+        }
+</script>
+</form>
+</body>
+</html>
